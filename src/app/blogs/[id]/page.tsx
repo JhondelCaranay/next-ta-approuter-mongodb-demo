@@ -1,4 +1,4 @@
-const Blog = () => {
-  return <div>Blog</div>;
+const BlogPost = () => {
+  return <div>BlogPost</div>;
 };
-export default Blog;
+export default BlogPost;
