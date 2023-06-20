@@ -1,16 +1,22 @@
-import Button from "@/components/button/Button";
-import Image from "next/image";
+import React from "react";
 import styles from "./page.module.css";
+import Image from "next/image";
+import Button from "@/components/button/Button";
+
+export const metadata = {
+  title: "Contact Information",
+  description: "This is Contact Page",
+};
 
 const Contact = () => {
   return (
-    <div className="container mx-auto">
-      <h1 className="text-[60px] mb-[100px] text-center">Let's Keep in Touch</h1>
-      <div className="flex items-center gap-[100px]">
-        <div className="flex-1 h-[500px] relative hidden md:block">
-          <Image src="/contact.png" alt="" fill={true} className={styles.img} />
+    <div className={styles.container}>
+      <h1 className={styles.title}>Let's Keep in Touch</h1>
+      <div className={styles.content}>
+        <div className={styles.imgContainer}>
+          <Image src="/contact.png" alt="" fill={true} className={styles.image} />
         </div>
-        <form className="flex-1 flex flex-col gap-5">
+        <form className={styles.form}>
           <input type="text" placeholder="name" className={styles.input} />
           <input type="text" placeholder="email" className={styles.input} />
           <textarea
@@ -25,4 +31,5 @@ const Contact = () => {
     </div>
   );
 };
+
 export default Contact;

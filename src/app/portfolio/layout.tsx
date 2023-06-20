@@ -1,7 +1,9 @@
+import styles from "./page.module.css";
+
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      <h1 className="text-8xl">Our Works</h1>
+      <h1 className={styles.mainTitle}>Our Works</h1>
       {children}
     </div>
   );

@@ -3,8 +3,8 @@ import styles from "./page.module.css";
 
 const Portfolio = () => {
   return (
-    <div className="">
-      <h1 className="my-5 mx-0">Choose a gallery</h1>
+    <div className={styles.container}>
+      <h1 className={styles.selectTitle}>Choose a gallery</h1>
       <div className={styles.items}>
         <Link href="/portfolio/illustrations" className={styles.item}>
           <span className={styles.title}>Illustrations</span>

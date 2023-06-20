@@ -1,16 +1,11 @@
+import React from "react";
+import styles from "./button.module.css";
 import Link from "next/link";
 
-type ButtonProps = {
-  text: string;
-  url: string;
-};
-
-const Button = ({ text, url }: ButtonProps) => {
+const Button = ({ text, url }: { text: string; url: string }) => {
   return (
     <Link href={url}>
-      <button className="p-5 cursor-pointer bg-[#53c28b] border-none rounded-[5px] min-w-max text-white">
-        {text}
-      </button>
+      <button className={styles.container}>{text}</button>
     </Link>
   );
 };
