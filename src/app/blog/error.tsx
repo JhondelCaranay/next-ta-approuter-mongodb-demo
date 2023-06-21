@@ -11,6 +11,10 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
   return (
     <div>
       <h2>Something went wrong!</h2>
+      <p>{JSON.stringify(error.message)}</p>
+      {/* <p>{JSON.stringify(error.stack)}</p>
+      <p>{JSON.stringify(error.name)}</p> */}
+
       <button
         onClick={
           // Attempt to recover by trying to re-render the segment
