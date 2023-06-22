@@ -17,11 +17,11 @@ async function getData() {
 }
 
 const Blog = async () => {
-  const data = await getData();
+  const data: Post[] = await getData();
   return (
     <div className={styles.mainContainer}>
-      {data.map((item: any) => (
-        <Link href={`/blog/${item._id}`} className={styles.container} key={item.id}>
+      {data.map((item) => (
+        <Link href={`/blog/${item._id}`} className={styles.container} key={item._id}>
           <div className={styles.imageContainer}>
             <Image src={item.img} alt="" width={400} height={250} className={styles.image} />
           </div>

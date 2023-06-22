@@ -4,7 +4,7 @@ import { Schema, Document, Model } from "mongoose";
 // Implementing Mongoose Models with Next.js in TypeScript
 // https://blog.adwinang.dev/implementing-mongoose-models-with-nextjs-in-typescript
 // https://blog.adwinang.dev/implementing-mongoose-models-with-nextjs-in-typescript
-interface IUser extends Document {
+export interface IUser extends Document {
   name: string;
   email: string;
   password: string;
@@ -35,4 +35,5 @@ const userSchema = new Schema(
 // export default mongoose.models.User || mongoose.model<IUser>("User", userSchema);
 
 type UserModel = Model<IUser, {}>;
+
 export default createModel<IUser, UserModel>("User", userSchema);

@@ -5,7 +5,7 @@ import { Schema, Document, Model } from "mongoose";
 // https://blog.adwinang.dev/implementing-mongoose-models-with-nextjs-in-typescript
 // https://blog.adwinang.dev/implementing-mongoose-models-with-nextjs-in-typescript
 
-interface IPost extends Document {
+export interface IPost extends Document {
   title: string;
   desc: string;
   img: string;

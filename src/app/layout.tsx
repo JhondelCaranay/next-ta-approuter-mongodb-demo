@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Blog App",
-  description: "Next.js + TypeScript + AppRouter Demo",
+  description: "Next.js + TypeScript + MongoDb + AppRouter Demo ",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
