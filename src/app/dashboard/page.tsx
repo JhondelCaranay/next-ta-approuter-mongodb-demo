@@ -5,6 +5,7 @@ import useSWR from "swr";
 // import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 const Dashboard = () => {
   //OLD WAY TO FETCH DATA
@@ -32,24 +33,24 @@ const Dashboard = () => {
   //   getData()
   // }, []);
 
-  // const session = useSession();
+  const session = useSession();
 
   const router = useRouter();
 
   //NEW WAY TO FETCH DATA
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-  const name: string = session?.data?.user.name;
+  const name: string = session?.data?.user?.name as string;
 
   const { data, mutate, error, isLoading } = useSWR(`/api/posts?username=${name}`, fetcher);
 
-  // if (session.status === "loading") {
-  //   return <p>Loading...</p>;
-  // }
+  if (session.status === "loading") {
+    return <p>Loading...</p>;
+  }
 
-  // if (session.status === "unauthenticated") {
-  //   router?.push("/dashboard/login");
-  // }
+  if (session.status === "unauthenticated") {
+    router?.push("/dashboard/login");
+  }
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -66,7 +67,7 @@ const Dashboard = () => {
           desc,
           img,
           content,
-          username: session.data.user.name,
+          username: session?.data?.user?.name,
         }),
       });
       mutate();

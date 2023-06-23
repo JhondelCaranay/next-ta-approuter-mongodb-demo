@@ -29,6 +29,14 @@ export async function generateMetadata({
   };
 }
 
+export async function generateStaticParams() {
+  const posts = await fetch("http://localhost:3000/api/posts").then((res) => res.json());
+
+  return posts.map((post: Post) => ({
+    id: post._id,
+  }));
+}
+
 const BlogPost = async ({
   params,
 }: {
