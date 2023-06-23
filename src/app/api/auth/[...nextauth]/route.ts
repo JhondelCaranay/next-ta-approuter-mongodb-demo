@@ -12,13 +12,13 @@ export const authOptions: AuthOptions = {
       // id: "credentials",
       name: "Credentials",
       credentials: {
+        name: { label: "name", type: "text" },
         email: { label: "email", type: "text" },
         password: { label: "password", type: "password" },
       },
       async authorize(credentials, req) {
         //Check if the user exists.
         await dbConnect();
-
         try {
           if (!credentials) {
             throw new Error("Credentials are required");
